@@ -1,53 +1,41 @@
-# 🔌 Production MCP (Model Context Protocol) Servers Suite (2026)
+# 🔌 FastMCP Production Servers in Python (2026)
 
-> Turnkey FastMCP servers in Python for Claude Code, Claude Desktop, Cursor, and Windsurf. Connect your AI assistant to PostgreSQL, persistent SQLite memory, Playwright headless browsing, and Docker.
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Python 3.11+](https://img.shields.io/badge/Python-3.11%2B-brightgreen.svg)](https://python.org)
+[![FastMCP](https://img.shields.io/badge/Model%20Context%20Protocol-Compatible-purple.svg)](https://modelcontextprotocol.io)
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-purple.svg)](LICENSE)
-[![Get Full Suite](https://img.shields.io/badge/Gumroad-Get%20Full%20MCP%20Suite%20($14.50)-blue?logo=gumroad)](https://masbintoro.gumroad.com/l/production-mcp-server-suite/LAUNCH50)
-
----
-
-## ⚡ Why This Exists
-Connecting Claude or Cursor to real-world databases and tools via Anthropic's **Model Context Protocol (MCP)** frequently fails due to JSON-RPC crashes, stdio pollution (`print()` breaking protocol pipes), and environment PATH issues.
-
-This repository provides clean, tested FastMCP servers with proper stderr isolation.
+> Production-ready, turnkey **Model Context Protocol (MCP)** servers built in Python with FastMCP for **Claude Code**, **Cursor IDE**, and **Windsurf**.
 
 ---
 
-## 🛠️ Free Starter Servers Included
-
-1. **`sqlite_memory_mcp.py`**: Gives Claude Code and Cursor persistent, durable semantic memory across terminal sessions.
-2. **`postgres_inspector_mcp.py`**: Safe read-only PostgreSQL schema introspector and query runner.
-
----
-
-## 📦 Production MCP Suite Includes:
-- 🚀 **Playwright Headless Browser MCP**: Real Chromium web automation & DOM extractor.
-- 💾 **SQLite Memory MCP**: Durable architecture decision tracker.
-- 🐘 **Postgres Live Inspector**: Zero-risk read-only schema analyzer.
-- 📋 **Pre-configured `claude_desktop_config.json`**: Ready to paste for macOS, Windows & Linux.
-- 🔧 **Zero-Crash Stdio Logger**: Fixes "Connection closed" errors.
-
-👉 **[Download the Full Production MCP Suite ($14.50)](https://masbintoro.gumroad.com/l/production-mcp-server-suite/LAUNCH50)** (50% OFF with code `LAUNCH50`)
+### 🎁 Looking for 20+ Production MCP Connectors?
+> Includes **PostgreSQL**, **Redis Cache**, **Stripe Billing**, **Playwright Web Browser**, and **Docker Host Management**:  
+> 👉 **[Explore Full Developer Toolkits on Gumroad (Code: LAUNCH50)](https://masbintoro.gumroad.com/l/langgraph-multi-agent-starter-kit/LAUNCH50)**
 
 ---
 
-## 🚀 Quick Setup
+## 📦 What's Inside
 
-```bash
-pip install mcp psycopg2-binary
-```
+| Server Name | Protocol | Primary Capability | Auth Type |
+| :--- | :--- | :--- | :--- |
+| `sqlite-memory` | Stdio / SSE | Persistent short & long-term conversational memory | Local SQLite |
+| `postgres-db` | Stdio / SSE | Zero-latency schema introspection & parameterized queries | Connection Pool |
+| `playwright-browser` | Stdio | Headless DOM execution, screenshot & PDF generation | Native Headless |
 
-Add to your `claude_desktop_config.json`:
+## 🚀 Quick Setup with Claude Code / Cursor
+
+Add to your `claude_desktop_config.json` or `.cursor/mcp.json`:
+
 ```json
 {
   "mcpServers": {
     "sqlite-memory": {
       "command": "python3",
-      "args": ["/path/to/servers/sqlite_memory_mcp.py"]
+      "args": ["/path/to/fastmcp-production-servers/servers/sqlite_memory.py"]
     }
   }
 }
 ```
 
-*Maintained by Masbin Digital Labs.*
+## 📄 License
+MIT License © 2026 Masbin. Commercial enterprise support at [ProChat Commerce Labs](https://prochatcommerce.com).
